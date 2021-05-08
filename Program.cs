@@ -42,30 +42,29 @@ namespace bhaskara
             Console.ForegroundColor=ConsoleColor.Blue;
             c=Convert.ToDouble(Console.ReadLine());
             Console.ResetColor();
-
-
-            d=Math.Pow(b,2)-4*a*c;
-            x1=(-b+ Math.Sqrt(d))/2*a;
-            x2=(-b- Math.Sqrt(d))/2*a;
             
-
-
-            if(d<0){
-                Console.ForegroundColor=ConsoleColor.Red;
-                Console.WriteLine("Como delta= "+d+", a equação não possui raízes reais!");
-                Console.ResetColor();
-
-            } else if (a==0){
+            if (a==0){
                 Console.ForegroundColor=ConsoleColor.Red;
                 Console.WriteLine("Não é uma equação de segundo grau!");
                 Console.ResetColor();
+            }else{
+                d=Math.Pow(b,2)-4*a*c;
+                if(d<0){
+                    Console.ForegroundColor=ConsoleColor.Red;
+                    Console.WriteLine("Como delta= "+d+", a equação não possui raízes reais!");
+                    Console.ResetColor();
 
-            } else {
-                Console.ForegroundColor=ConsoleColor.Red;
-                Console.WriteLine("X1 = "+x1+" e X2 = "+x2+". ");
-                Console.ResetColor();
+                } else {
+                    x1=(-b+ Math.Sqrt(d))/2*a;
+                    x2=(-b- Math.Sqrt(d))/2*a;
+                    Console.ForegroundColor=ConsoleColor.Red;
+                    Console.WriteLine("X1 = "+x1+" e X2 = "+x2+". ");
+                    Console.ResetColor();
 
+                }
             }
+
+
 
         }
     }
